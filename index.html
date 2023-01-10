@@ -5,19 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -25,7 +13,42 @@
   </head>
 
   <body>
-    <h1>weather test page</h1>
+
+    <!-- weather dashboard -->
+    <header>
+      <h3 class="header-title">Weather Dashboard</h3>
+    </header>
+
+    <!-- main app -->
+    <div class="row">
+      <!-- search bar -->
+      <div class="col">
+        <h2 class="search-title">Search for a City</h2>
+      </div>
+      <!-- results section-->
+      <div class="col-9">
+        <!-- current status -->
+        <div class="row">
+          <div class = "col current-status">
+            
+            <h1>Atlanta (9/13/2022) ☀️</h1>
+            <p>Temp: 76.63˚</p>
+            <p>Wind: 8.43 MPH</p>
+            <p>Humidity: 44%</p>
+            
+          </div>
+
+        </div>
+         <!-- 5-day status -->
+         <div class="row five-day-forecast">
+          <h2 class="five-day-forecast-title">5-Day Forecast</h2>
+
+        </div>
+        
+      </div>
+    </div>
+
+
 
     <script src="./assets/js/script.js"></script>
 
