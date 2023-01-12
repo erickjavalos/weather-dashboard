@@ -72,3 +72,14 @@ header {
 .status-data{
     font-size: 12px;
 }
+
+.button-style {
+    color: white;
+    margin-bottom: 1%;
+    border: none;
+    background-color: rgba(70, 90, 184, 1);
+    width: 85%;
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}

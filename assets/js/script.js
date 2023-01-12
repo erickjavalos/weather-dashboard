@@ -9,6 +9,32 @@ var today = dayjs();
 var historyData = localStorage.getItem("history");
 var historyList = []
 
+var showHistory = () =>
+{
+
+    var pollHistory = localStorage.getItem('history')
+    var historyData = JSON.parse(pollHistory)
+    // sort this for viewing purposes
+    var htmlHistory = ''
+    searchHist.html(htmlHistory)
+    if (historyData)
+    {
+        // append buttons dynamically
+        for (let i = 0; i < historyData.length; i++)
+        {
+            var buttonVar = $('<button>')
+            buttonVar.text(historyData[historyData.length - (i+1)])
+            buttonVar.addClass('buttons')
+            buttonVar.addClass('button-style')
+            buttonVar.addClass('btn btn-primary')
+            searchHist.append(buttonVar)
+
+        }
+    }
+}
+
+showHistory()
+
 var process = (cityName) => 
 {
     // call response on city name
@@ -113,20 +139,7 @@ var processHistory = (cityName) =>
     }
     
     // we have updated data in localStorage
-    var pollHistory = localStorage.getItem('history')
-    var historyData = JSON.parse(pollHistory)
-    // sort this for viewing purposes
-    var htmlHistory = ''
-    searchHist.html(htmlHistory)
-    // append buttons dynamically
-    for (let i = 0; i < historyData.length; i++)
-    {
-        var buttonVar = $('<button>')
-        buttonVar.text(historyData[historyData.length - (i+1)])
-        buttonVar.addClass('buttons')
-        searchHist.append(buttonVar)
-
-    }
+    showHistory()
 }
 
 // process button callback
@@ -145,6 +158,8 @@ searchHist.on('click', '.buttons', function (event)
 {
     // grab button instance
     var citySelected = event.target.innerText;
+    // update textbox selection
+    textBox.val(citySelected)
     // process the city
     process(citySelected)
 })
