@@ -87,12 +87,16 @@ var processHistory = (cityName) =>
         // maximum history was left
         if (tempHistory.length == 10)
         {
-            // remove index 0 (pop)
-            tempHistory.shift() 
-            // append to history normally (push)
-            tempHistory.push(cityName)
-            // update localStorage
-            localStorage.setItem('history', JSON.stringify(tempHistory))
+            // check if cityName exists and append normally
+            if (!tempHistory.includes(cityName))
+            {
+                // remove index 0 (pop)
+                tempHistory.shift() 
+                // append to history normally (push)
+                tempHistory.push(cityName)
+                localStorage.setItem('history',JSON.stringify(tempHistory))
+            }
+            
         }
         else 
         {   
@@ -105,29 +109,24 @@ var processHistory = (cityName) =>
         }
     }
     else{
-        // var city = []
-        // city.append(cityName)
         localStorage.setItem('history',JSON.stringify([cityName]))
     }
     
-
     // we have updated data in localStorage
     var pollHistory = localStorage.getItem('history')
     var historyData = JSON.parse(pollHistory)
-    var updatedHistory = JSON.parse(pollHistory)
     // sort this for viewing purposes
-    updatedHistory.sort()
-    // create html
     var htmlHistory = ''
     searchHist.html(htmlHistory)
     // append buttons dynamically
-    updatedHistory.forEach((city) => {
+    for (let i = 0; i < historyData.length; i++)
+    {
         var buttonVar = $('<button>')
-        buttonVar.text(city)
-        // buttonVar.clas
+        buttonVar.text(historyData[historyData.length - (i+1)])
         buttonVar.addClass('buttons')
         searchHist.append(buttonVar)
-    })
+
+    }
 }
 
 // process button callback
