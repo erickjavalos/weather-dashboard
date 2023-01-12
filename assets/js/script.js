@@ -62,7 +62,6 @@ var process = (cityName) =>
             fetch(fiveDayURL)
                 .then((response) =>response.json())
                 .then((fivedata) => {
-                    // console.log(fivedata)
                     var listData = fivedata.list
                     var curridx = 0;
                     // define the five day forcast regio
