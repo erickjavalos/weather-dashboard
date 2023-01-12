@@ -9,6 +9,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    
     <title>Weather Dashboard</title>
   </head>
 
@@ -23,28 +27,29 @@
     <div class="row">
       <!-- search bar -->
       <div class="col">
-        <h2 class="search-title">Search for a City</h2>
+        <div class="row search-city-title">
+          <h2 class="search-title">Search for a City</h2>
+        </div>
+        <div class="row">
+          <input id="search-focus" type="search" id="form1" class="search-bar-text" />
+        </div>
+        <div class="row btn-class-top">
+          <button id="search-btn"class="btn btn-primary btn-class" type="submit">Search</button>
+        </div>
+        <hr class="horizontal-div">
+
+        <div id="search-history" class="buttons">
+          
+        </div>
+
       </div>
       <!-- results section-->
       <div class="col-9">
         <!-- current status -->
         <div class="row">
-          <div class = "col current-status">
-            
-            <h1>Atlanta (9/13/2022) ☀️</h1>
-            <p>Temp: 76.63˚</p>
-            <p>Wind: 8.43 MPH</p>
-            <p>Humidity: 44%</p>
-            
-          </div>
-
+          <div id="results-daily" class = "col"></div>
+          <div id="results-5-day" class="row five-day-forecast">
         </div>
-         <!-- 5-day status -->
-         <div class="row five-day-forecast">
-          <h2 class="five-day-forecast-title">5-Day Forecast</h2>
-
-        </div>
-        
       </div>
     </div>
 

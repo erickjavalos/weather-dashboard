@@ -13,21 +13,62 @@ header {
     padding:1%;
 }
 
-.search-title{
-    padding-left: 1%;
-    padding-right: 1%;
+.search-title {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: bold;
 }
 
-.current-status{
+.current-status {
     border:1px solid black;
 }
 
-.five-day-forecast{
+.five-day-forecast {
     padding-top: 1%;
 }
 
-.five-day-forecast-title{
+.five-day-forecast-title {
     padding: 0;
     font-weight: bold;
 
+}
+
+.search-city-title {
+    padding-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-bar-text {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.btn-class-top {
+    padding: 10px;
+}
+.btn-class {
+    width: 85%;
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horizontal-div {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-elements{
+    color: white;
+    background-color: rgba(38, 19, 96, 1);
+    margin-right: 1%;
+    width: 12rem;
+}
+
+.status-data{
+    font-size: 12px;
 }
