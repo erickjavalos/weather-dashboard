@@ -43,7 +43,6 @@ var process = (cityName) =>
     fetch(responseUrl)
         .then((response) => response.json()) // returns a promise of json()
         .then((data) => {
-            console.log(data)
             // process history
             processHistory(cityName)
             // retrieve data
@@ -93,7 +92,6 @@ var process = (cityName) =>
                         curridx++;
                     })
                     
-                    console.log(curridx)
                     // append html elements
                     results.html(htmlCurrStat)
                     results.addClass('current-status')
